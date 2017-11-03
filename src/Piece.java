@@ -1,7 +1,7 @@
 public class Piece {
-    private Character character;
+    private String string = "-";
 
-    public Character getCharacter() {
-        return this.character;
+    public String getString() {
+        return this.string;
     }
 }

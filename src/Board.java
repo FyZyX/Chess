@@ -1,15 +1,28 @@
 public class Board {
-    private Character[][] grid;
+    private Piece[][] grid;
 
     Board() {
-        this.grid = new Character[8][8];
+        Piece[] emptyRow = {new Piece(), new Piece(), new Piece(), new Piece(),
+                new Piece(), new Piece(), new Piece(), new Piece()};
+        this.grid = new Piece[][] {
+                emptyRow, emptyRow, emptyRow, emptyRow, emptyRow, emptyRow, emptyRow, emptyRow
+        };
     }
 
-    private void placePiece(Piece pce, Square sqr) {
-        this.grid[sqr.getFile()][sqr.getRank()] = pce.getCharacter();
+    private void placePiece(Piece piece, Square square) {
+        this.grid[square.getFile()][square.getRank()] = piece;
+    }
+
+    private Piece pieceOnSquare(Square square) {
+        return this.grid[square.getFile()][square.getRank()];
     }
 
     public void print() {
-        System.out.println("");
+        for (Piece[] pieces : this.grid) {
+            for (Piece piece : pieces) {
+                System.out.print(piece.getString() + ' ');
+            }
+            System.out.println();
+        }
     }
 }
