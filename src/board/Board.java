@@ -25,18 +25,33 @@ public class Board {
             for (Rank rank : Rank.values()) {
                 int i = rank.ordinal(), j = file.ordinal();
                 grid[i][j] = new Square(file, rank);
-                placePiece(Piece.fromString(boardString[i][j]), grid[i][j]);
+                Piece piece = Piece.fromString(boardString[i][j]);
+                if (piece != null) {
+                    placePiece(piece, grid[i][j]);
+                }
             }
         }
     }
 
+    public Square getSquare(Square square) {
+        return getSquare(square.getFile(), square.getRank());
+    }
+
+    public Square getSquare(int file, int rank) {
+        return grid[rank][file];
+    }
+
     public void placePiece(Piece piece, Square square) {
         piece.setSquare(square);
-        this.grid[square.getRank()][square.getFile()].setPiece(piece);
+        getSquare(square).setPiece(piece);
+    }
+
+    public void clearSquare(Square square) {
+        square.clearPiece();
     }
 
     public Piece pieceOn(Square square) {
-        return this.grid[square.getRank()][square.getFile()].getPiece();
+        return getSquare(square).getPiece();
     }
 
     public void setPiecesFor(Player player) {
@@ -45,16 +60,16 @@ public class Board {
         if (player.getAllegiance().equals(Color.WHITE)) {
             for (int i = 0; i < l/2; i++) {
                 // set white pawn row
-                grid[6][i].setPiece(pieces[l/2 + i]);
+                getSquare(i, 6).setPiece(pieces[l/2 + i]);
                 // set white back row
-                grid[7][i].setPiece(pieces[i]);
+                getSquare(i, 7).setPiece(pieces[i]);
             }
         } else {
             for (int i = 0; i < l/2; i++) {
                 // set black back row
-                grid[0][i].setPiece(pieces[i]);
+                getSquare(i, 0).setPiece(pieces[i]);
                 // set black pawn row
-                grid[1][i].setPiece(pieces[l/2 + i]);
+                getSquare(i, 1).setPiece(pieces[l/2 + i]);
             }
         }
     }
@@ -63,7 +78,8 @@ public class Board {
         String string = "";
         for (Square[] squares : this.grid) {
             for (Square square : squares) {
-                string += square.getPiece().toString() + ' ';
+                Piece piece = square.getPiece();
+                string += (piece == null ? "-" : piece.toString()) + ' ';
             }
             string += '\n';
         }

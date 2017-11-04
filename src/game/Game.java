@@ -24,7 +24,7 @@ public class Game {
 
     private void move(Square current, Square destination) {
         Piece piece = board.pieceOn(current);
-        board.placePiece(new Piece(), current);
+        board.clearSquare(current);
         board.placePiece(piece, destination);
     }
 

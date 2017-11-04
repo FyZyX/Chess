@@ -33,6 +33,10 @@ public class Square {
         this.piece = piece;
     }
 
+    public void clearPiece() {
+        this.piece = null;
+    }
+
     public String toString() {
         String r = rank.toString();
         String f = file.toString();

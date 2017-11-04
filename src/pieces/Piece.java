@@ -3,7 +3,7 @@ package pieces;
 import board.Square;
 import player.Color;
 
-public class Piece {
+public abstract class Piece {
     protected Color color;
     protected String string;
     private Square square = null;
@@ -47,7 +47,7 @@ public class Piece {
             case "q": return new Queen(Color.BLACK);
             case "K": return new King();
             case "k": return new King(Color.BLACK);
-            default: return new Piece();
+            default: return null;
         }
     }
 }
