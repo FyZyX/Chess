@@ -1,17 +1,23 @@
+package pieces;
+
 public class Piece {
     protected Color color;
     protected String string;
 
-    Piece() {
+    public Piece() {
         this("-");
     }
 
     Piece(String string) {
         this.string = string;
-        this.color = Color.WHITE;
+        color = Color.WHITE;
+    }
+
+    public Color getColor() {
+        return color;
     }
 
     public String getString() {
-        return this.color.equals(Color.WHITE) ? this.string.toUpperCase() : this.string;
+        return color.equals(Color.WHITE) ? string.toUpperCase() : string;
     }
 }

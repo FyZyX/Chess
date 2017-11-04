@@ -1,9 +1,11 @@
+package pieces;
+
 public class Queen extends Piece {
     Queen() {
         super("q");
     }
 
-    Queen(Color color) {
+    public Queen(Color color) {
         this();
         this.color = color;
     }

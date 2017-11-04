@@ -1,3 +1,5 @@
+package board;
+
 public class Square {
     private final File file;
     private final Rank rank;

@@ -1,9 +1,11 @@
+package pieces;
+
 public class Knight extends Piece {
     Knight() {
         super("n");
     }
 
-    Knight(Color color) {
+    public Knight(Color color) {
         this();
         this.color = color;
     }
