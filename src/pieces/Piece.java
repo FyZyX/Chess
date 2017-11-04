@@ -1,10 +1,12 @@
 package pieces;
 
+import board.Square;
 import player.Color;
 
 public class Piece {
     protected Color color;
     protected String string;
+    private Square square = null;
 
     public Piece() {
         this("-");
@@ -17,6 +19,10 @@ public class Piece {
 
     public Color getColor() {
         return color;
+    }
+
+    public Square getSquare() {
+        return square;
     }
 
     public String toString() {

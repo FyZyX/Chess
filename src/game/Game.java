@@ -12,6 +12,7 @@ public class Game {
     private Board board;
     private Player white;
     private Player black;
+    private Color currentTurn = Color.WHITE;
 
     public Game() {
         board = new Board();
@@ -21,7 +22,7 @@ public class Game {
         board.setPiecesFor(black);
     }
 
-    private void move(Player player, Square current, Square destination) {
+    private void move(Square current, Square destination) {
         Piece piece = board.pieceOn(current);
         board.placePiece(new Piece(), current);
         board.placePiece(piece, destination);
@@ -31,7 +32,7 @@ public class Game {
         Square c = new Square(File.FILE_A, Rank.RANK_2);
         Square d = new Square(File.FILE_A, Rank.RANK_4);
         board.print();
-        move(white, c, d);
+        move(c, d);
         board.print();
     }
 }
