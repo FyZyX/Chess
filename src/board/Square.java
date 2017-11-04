@@ -32,4 +32,10 @@ public class Square {
     public void setPiece(Piece piece) {
         this.piece = piece;
     }
+
+    public String toString() {
+        String r = rank.toString();
+        String f = file.toString();
+        return f.substring(f.length() - 1).toLowerCase() + r.substring(r.length() - 1);
+    }
 }

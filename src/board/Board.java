@@ -24,12 +24,14 @@ public class Board {
         for (File file : File.values()) {
             for (Rank rank : Rank.values()) {
                 int i = rank.ordinal(), j = file.ordinal();
-                grid[i][j] = new Square(file, rank, Piece.fromString(boardString[i][j]));
+                grid[i][j] = new Square(file, rank);
+                placePiece(Piece.fromString(boardString[i][j]), grid[i][j]);
             }
         }
     }
 
     public void placePiece(Piece piece, Square square) {
+        piece.setSquare(square);
         this.grid[square.getRank()][square.getFile()].setPiece(piece);
     }
 

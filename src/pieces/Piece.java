@@ -25,6 +25,10 @@ public class Piece {
         return square;
     }
 
+    public void setSquare(Square square) {
+        this.square = square;
+    }
+
     public String toString() {
         return color.equals(Color.WHITE) ? string.toUpperCase() : string;
     }
