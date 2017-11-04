@@ -1,7 +1,7 @@
 package pieces;
 
 public class Rook extends Piece {
-    Rook() {
+    public Rook() {
         super("r");
     }
 

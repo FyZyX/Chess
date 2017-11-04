@@ -1,7 +1,7 @@
 package pieces;
 
 public class Knight extends Piece {
-    Knight() {
+    public Knight() {
         super("n");
     }
 

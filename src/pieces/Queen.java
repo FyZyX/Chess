@@ -1,7 +1,7 @@
 package pieces;
 
 public class Queen extends Piece {
-    Queen() {
+    public Queen() {
         super("q");
     }
 

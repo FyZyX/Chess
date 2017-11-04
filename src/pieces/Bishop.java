@@ -1,7 +1,7 @@
 package pieces;
 
 public class Bishop extends Piece {
-    Bishop() {
+    public Bishop() {
         super("b");
     }
 

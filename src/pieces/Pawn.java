@@ -1,7 +1,7 @@
 package pieces;
 
 public class Pawn extends Piece {
-    Pawn() {
+    public Pawn() {
         super("p");
     }
 
