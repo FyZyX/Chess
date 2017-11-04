@@ -4,9 +4,9 @@ import board.Board;
 import board.File;
 import board.Rank;
 import board.Square;
-import pieces.Color;
 import pieces.Piece;
 import player.Player;
+import player.Color;
 
 public class Game {
     private Board board;

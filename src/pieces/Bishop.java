@@ -1,5 +1,7 @@
 package pieces;
 
+import player.Color;
+
 public class Bishop extends Piece {
     public Bishop() {
         super("b");

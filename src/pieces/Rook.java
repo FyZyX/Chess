@@ -1,5 +1,7 @@
 package pieces;
 
+import player.Color;
+
 public class Rook extends Piece {
     public Rook() {
         super("r");
